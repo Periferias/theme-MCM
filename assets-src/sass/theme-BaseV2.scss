@@ -1,0 +1,414 @@
+@use 'sass:color';
+
+// COLORS
+$black: #1E1E1E;
+$error: #B7292E;
+$gray-100: #F5F5F5;
+$gray-300: #C4C4C4;
+$gray-700: #4E4E4E;
+$warning: #F07B07;
+$white: #FFFFFF;
+
+// Default lightness deltas
+$lightness-300: 25%;
+$lightness-700: 25%;
+
+// Brand colors
+$primary-500: #044cb8;
+$secondary-500: darken(#044cb8, 20%);
+
+// Entities colors
+$opportunities-500: #ff0000;
+$events-500: #77c14e;
+$spaces-500: darken(#77c14e, 15%);
+$agents-500: #77c14e;
+$projects-500: #77c14e;
+
+$seals-500: #1E1E1E;
+
+// Feedback colors
+$danger-500: #B7292E;
+$success-500: #498200;
+$warning-500: #FF9F1C;
+$helper-500: #0074C1;
+
+// home
+$home-opportunities: #044cb8;
+$home-feature: #77c14e;
+$home-register: #044cb8;
+
+// // Neutral colors
+$low-500: #00318C;
+// $high-500: #FFFFFF;
+
+// // FONTS
+// $font-body: 'Open Sans', sans-serif;
+// $font-headings: 'Open Sans', sans-serif;
+
+// // Borders radius
+// $border-radius-xs: 4px;
+// $border-radius-sm: 8px;
+// $border-radius-pill: 64px;
+
+// // Borders
+// $border-hairline: 1px solid;
+// $border-solid: 2px solid;
+
+// // Shadows
+// $shadow-lv-1: 0px 4px 8px rgba(0, 0, 0, 0.16);
+// $shadow-lv-2: 0px 8px 16px rgba(0, 0, 0, 0.16);
+// $shadow-lv-3: 0px 8px 24px rgba(0, 0, 0, 0.16);
+// $shadow-lv-4: 0px 16px 48px rgba(0, 0, 0, 0.16);
+// $shadow-lv-1-up: 0px -4px 8px rgba(0, 0, 0, 0.16);
+
+@import '../../../BaseV2/assets-src/sass/theme-BaseV2';
+
+html, body{
+  overflow-x: hidden;
+}
+.mc-header-logo {
+  max-width: 9rem;
+}
+
+.main-footer__reg {
+  display: none;
+}
+.main-footer__content--links {
+  display: none;
+}
+.topo-togov-wrapper {
+  display: none;
+}
+
+/**
+Ocultando o ID e se a oportunidade esta aberta, na página de Oportunidades
+*/
+
+.user-slot {
+  display: none;
+}
+
+/**
+Ocultando os ícones de compartilhar da tela da oportunidade
+*/
+
+.mc-share-links {
+  display: none;
+}
+
+/**
+Ocultando o ID e tipo, na página de Oportunidades
+*/
+
+.metadata>dl {
+  display: none !important;
+}
+
+/**
+Ocultando o título Publicado por na tela da oportunidade
+*/
+
+.entity-owner {
+  display: none;
+}
+
+/**
+Ocultando os botões de Denúncia e Contato
+*/
+
+.complaint-suggestion {
+  display: none;
+}
+
+/**
+Ocultando a parte de selos na tela da oportunidade
+*/
+
+.entity-seals {
+  display: none;
+}
+
+/**
+Ocultando a parte de área de interesse
+*/
+
+.flex-container>.entity-terms {
+  display: none;
+}
+
+/**
+Ocultando termos dos cards de Oportunidades
+*/
+
+.base-v2.controller-site.action-index.layout-default .home-header__main,
+.base-v2.controller-site.action-index.layout-default .entity-card__content--terms,
+.base-v2.controller-site.action-index.layout-default .entity-card__header.user-details .user-info.with-labels span {
+  display: none;
+}
+.entity-card__header.user-details {
+    gap: 1rem;
+    flex-direction: column;
+
+}
+.base-v2.controller-site.action-index.layout-default .search__header,
+.base-v2.controller-site.action-index.layout-default .tabs-component__header,
+.base-v2.controller-site.action-index.layout-default .search-list__order {
+  display: none;
+}
+
+/**
+Melhorando a exibição da imagem em destaque da home
+*/
+.home-header__content {
+  background: none;
+}
+
+.home-header__content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  z-index: 2;
+}
+
+.home-header__background .img {
+  min-width: auto;
+}
+
+.home-header__content {
+  min-width: auto;
+}
+
+.entity-card {
+  background-color: #F2F2F2;
+  width: 100%;
+  box-shadow: 0em 1em 2em -1em black;
+  user-select: none;
+  width: 100%;
+
+}
+.entity-card.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 24rem;
+}
+.entity-card__header.title{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  align-self: flex-start;
+}
+.mc-header-menu-user__desktop .user:before,
+.mc-header-menu-user__mobile .user:before {
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuNSA2Ljc1TDkgMTEuMjVMMTMuNSA2Ljc1IiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K") no-repeat 50%/contain;
+}
+
+.entity-card__registration {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.button--primary {
+  padding: 1rem 0.5rem;
+  background-color: #4F87EB;
+  border: .125rem solid #4F87EB;
+
+}
+.entity-card__footer {
+    gap: 1.5rem 0;
+    flex-direction: column;
+
+}
+.entity-card__footer--action .button {
+    display: flex;
+
+}
+
+.inscricoes-btn {
+    display: block;
+    color: #00AE00;
+    background-color: #fff;
+    border: 1px solid #00AE00;
+    border-radius: 8px;
+    padding: 0.5rem;
+    gap: 0.2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.inscricoes-btn.orange {
+    color: #000;
+    background-color: #FFDAAD;
+    border: none;
+}
+
+.inscricoes-btn.disabled {
+    color: #8B8B8B;
+    background-color: #D4D4D4;
+    border: 1px solid #8B8B8B;
+}
+
+.entity-card__header.user-details .user-info a {
+    color: #000;
+}
+
+.entity-card__header.user-details .user-info.without-labels span {
+    display: none;
+}
+
+.footer-mobile {
+  text-align: center;
+  padding: 1em 0;
+}
+.footer-mobile a{
+  text-decoration: underline;
+}
+.footer-mobile a,
+.footer-mobile p {
+  color: #000;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.main-footer__content--links {
+  display: none;
+}
+.main-footer__content {
+  margin: 0 !important;
+}
+.panel-nav a{
+  color: var(--mc-primary-500);
+}
+.panel-nav a:focus, .panel-nav a:hover {
+    background-color: var(--mc-primary-500);
+    color: var(--mc-high-500) !important;
+}
+@media (max-width:37.5rem) {
+    .search__tabs--list .search-list .entity-card__header.title {
+        flex-direction: row;
+    }
+  .mc-avatar--medium {
+    height: 5rem;
+    min-height: 5rem;
+    min-width: 5rem;
+    width: 5rem
+  }
+  .entity-card.container {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 31.25rem) {
+  .home-header__content {
+    min-height: 8rem;
+  }
+
+  .home-header__background {
+    height: auto;
+  }
+
+  .home-header__background .img>img {
+    width: 100%;
+    height: auto;
+  }
+}
+.mc-header-menu {
+  display: none;
+}
+
+.panel-nav__left,
+.vertical__line,
+.panel-nav__right h3,
+.panel-nav__right > ul, 
+.panel-nav__right .panel-nav__line {
+  display: none;
+}
+// div.panel-nav__right:nth-child(6) > li:nth-child(2) {
+//   display: none;
+// }
+
+
+.entity-related-agents {
+  display: none;
+}
+.mc-breadcrumb {
+  display: none;
+}
+
+.opportunity-header__content .left .title__info {
+  display: none;
+}
+
+/** 
+Trocando o termo Link por um texto melhor na visão geral da Oportunidade
+*/
+.action-single .entity-links__title {
+    color: transparent;
+    position: relative;
+}
+
+.action-single .entity-links__title::after {
+    content: "Confira o edital do prêmio";
+    color: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+}
+
+// Ajusta altura da linha do título (espaçmento vertical) do Formulário de inscrição para dispositivos mobile 
+@media screen and (max-width: 50rem) {
+  .controller-registration .registration.edit .registration__title {
+    line-height: 3.3rem; 
+  }
+}
+
+// Media query que atinge iPhones (SE até 14 Pro Max), sem afetar Androids ou desktops
+@media screen
+  and (max-device-width: 26.875rem)          // 430px em rem
+  and (hover: none)                          // Apenas dispositivos touch
+  and (pointer: coarse)                      // Ponteiro grosso (dedo)
+  and (-webkit-min-device-pixel-ratio: 2) {  // Telas Retina (iPhones)
+
+  .field__checkbox > span {
+    margin-left: 0.5rem; // Ajuste para iPhones
+  }
+}
+
+.controller-registration .registration__title {
+  display: none;
+}
+.controller-registration .opportunity-header__content {
+  padding: 1em 1em 3em;
+}
+
+
+.main-footer {
+    background: #F2F2F2;
+    padding-bottom: 1.5rem;
+}
+.main-footer__content {
+  margin: auto;
+  max-width: none;
+  width: auto;
+}
+
+// Para o funcionamento do postion sticky na página de avaliações
+body.base-v2.controller-registration.action-evaluation {
+    overflow-x: visible;
+}
+
+//Ajustes no campo do Parecer
+.tecnical-evaluation-form__textarea textarea {
+    width: 100%;
+    border-radius: 4px;
+}
+
+small.contchar {
+    float: right;
+}
