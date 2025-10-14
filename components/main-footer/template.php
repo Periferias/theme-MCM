@@ -37,7 +37,7 @@ $config = $app->config['social-media'];
         <div class="main-footer__content--links">
             <?php $this->applyTemplateHook("main-footer-links", "begin")?>
     
-            <ul class="main-footer__content--links-group">
+            <!-- <ul class="main-footer__content--links-group">
                 <li>
                     <a><?php i::_e("Acesse"); ?></a>
                 </li>
@@ -110,7 +110,7 @@ $config = $app->config['social-media'];
                         </li>
                     <?php endforeach ?>
                 <?php endif; ?>
-                </ul>
+                </ul> -->
             <?php $this->applyTemplateHook("main-footer-links", "end")?>
         </div>
         <?php $this->applyTemplateHook("main-footer-links", "after")?>      
@@ -124,10 +124,10 @@ $config = $app->config['social-media'];
                 <span class="mapas"><?php i::_e("mapas culturais"); ?></span>
             </p>
 
-            <a class="link" href="https://github.com/culturagovbr/mapadacultura">
+            <!-- <a class="link" href="https://github.com/culturagovbr/mapadacultura">
                 <?php i::_e("Conheça o repositório") ?>
                 <mc-icon name="github"></mc-icon>
-            </a>
+            </a> -->
         </div>
         <?php $this->applyTemplateHook("main-footer-reg", "end")?>
     </div>
