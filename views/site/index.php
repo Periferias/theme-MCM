@@ -5,13 +5,10 @@
  */
 
 $this->import('
-    home-entities 
-    home-feature
-    home-header 
-    home-map 
-    home-opportunities 
-    home-register
+    home-header
+    home-opportunities
 ');
 ?>
+
 <home-header></home-header>
 <home-opportunities></home-opportunities>
