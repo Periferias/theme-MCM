@@ -2,6 +2,7 @@
 use \MapasCulturais\i;
 
 return [
+    'auth.provider' => '\MultipleLocalAuth\Provider',
     'app.siteName' => 'Prêmio Periferia Viva 2025',
     /* 
     Define o nome do asset da imagem da logo do site - Substituirá a logo padrão
